@@ -74,23 +74,25 @@ class doors{
     toggleAll()
     {
             let ArrayToggle = this.toggle();
-
+            let counter = 1;
             let stringToggle = ArrayToggle.split(',');
             for (let con = 0; con < 100; con++) {
                 for (let index = 0; index < con; index++) {
                     
                     let doorIndex = index ;
-                
-                    if(stringToggle[doorIndex] == " *")
+                    if(counter % 3 ===0)
                     {
-                        stringToggle[doorIndex] = '#';
-                    
-                    } else if(stringToggle[doorIndex] == "#")
-                    {
-                        stringToggle[doorIndex] = ' *';
+                        if(stringToggle[doorIndex] == " *")
+                        {
+                            stringToggle[doorIndex] = '#';
 
+                        } else if(stringToggle[doorIndex] == "#")
+                        {
+                            stringToggle[doorIndex] = ' *';
+
+                        }
                     }
-                    
+                    counter++;
                 }
     
             }
